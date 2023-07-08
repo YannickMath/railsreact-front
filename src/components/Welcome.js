@@ -7,7 +7,6 @@ import FormLabel from "@mui/joy/FormLabel";
 import Input from "@mui/joy/Input";
 import Button from "@mui/joy/Button";
 import { Link, useNavigate } from "react-router-dom";
-// import Link from "@mui/joy/Link";
 
 export default function Welcome() {
   const navigate = useNavigate();
@@ -17,15 +16,15 @@ export default function Welcome() {
     password: "",
   });
 
-  const handleSignup = async () => {
+  const handleLogin = async () => {
     // Validation des entrées
-    if (!state.email || !state.password || !state.password_confirmation) {
+    if (!state.email || !state.password) {
       alert("Veuillez remplir tous les champs.");
       return;
     }
 
     try {
-      const response = await fetch("http://localhost:3000/users", {
+      const response = await fetch("http://localhost:3000/users/sign_in", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,20 +110,18 @@ export default function Welcome() {
             </FormControl>
             <Typography
               endDecorator={
-                <Link to="/signup">I do not remember my password</Link>
+                <Link to="/forgot-password">I do not remember my password</Link>
               }
               fontSize="sm"
               sx={{ alignSelf: "center" }}
-              // onClick={handleSignup}
             />
-            <Button sx={{ mt: 1 }}>Log in</Button>
+            <Button sx={{ mt: 1 }} onClick={handleLogin}>Log in</Button>
             <Typography
               endDecorator={<Link to="/signup">Sign up</Link>}
               fontSize="sm"
               sx={{ alignSelf: "center" }}
-              onClick={handleSignup}
             >
-              Don&apos;t have an account?
+              Don't have an account?
             </Typography>
           </Sheet>
         </CssVarsProvider>

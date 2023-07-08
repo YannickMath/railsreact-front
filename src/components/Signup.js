@@ -80,8 +80,6 @@ export default function Signup() {
 
       <div className="rightContainer">
         <CssVarsProvider>
-          {/* <main> */}
-          {/* <ModeToggle /> */}
           <Sheet
             sx={{
               width: 500,
