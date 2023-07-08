@@ -30,7 +30,7 @@ body {
 }
 
 .leftContainer  {
-  width: 50vw;
+  width: 50w;
   height: 100vh;
   grid-area: leftContainer;
   display: flex;
@@ -41,13 +41,14 @@ body {
   background-size: contain;
   background-position: center;
 
+
 }
 
 .rightContainer  {
   grid-area: rightContainer;
-  width: 50%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
