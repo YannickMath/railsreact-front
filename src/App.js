@@ -1,11 +1,13 @@
 import './App.css';
+import Welcome from './components/welcome';
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 
 function App() {
+
   return (
- <div>
-  <h1>Test</h1>
-  
-  bonjour !
+ <div className="layout">
+  <Welcome />
 
   </div>
   );
