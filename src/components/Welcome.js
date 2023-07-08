@@ -6,17 +6,60 @@ import FormControl from "@mui/joy/FormControl";
 import FormLabel from "@mui/joy/FormLabel";
 import Input from "@mui/joy/Input";
 import Button from "@mui/joy/Button";
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 // import Link from "@mui/joy/Link";
 
 export default function Welcome() {
   const navigate = useNavigate();
 
-  const handleSignup = () => {
-    console.log("signup");
-    navigate('/signup');
+  const [state, setState] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  const handleSignup = async () => {
+    // Validation des entrées
+    if (!state.email || !state.password || !state.password_confirmation) {
+      alert("Veuillez remplir tous les champs.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user: state }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json(); // obtenir plus d'informations sur l'erreur
+        throw new Error(
+          `HTTP error! status: ${response.status}, message: ${errorData.message}`
+        );
+      } else {
+        setState({
+          email: "",
+          password: "",
+        });
+
+        navigate("/Profile");
+      }
+    } catch (error) {
+      console.error("Error during sign up: ", error);
+      alert(`Error signing up: ${error.message}`);
+    }
   };
 
+  const handleOnChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className="main">
@@ -49,6 +92,8 @@ export default function Welcome() {
             <FormControl>
               <FormLabel>Email</FormLabel>
               <Input
+                onChange={handleOnChange}
+                value={state.email}
                 name="email"
                 type="email"
                 placeholder="johndoe@email.com"
@@ -57,15 +102,24 @@ export default function Welcome() {
             <FormControl>
               <FormLabel>Password</FormLabel>
               <Input
+                onChange={handleOnChange}
+                value={state.password}
                 name="password"
                 type="password"
                 placeholder="password"
               />
             </FormControl>
-
-            <Button sx={{ mt: 1 }} >Log in</Button>
             <Typography
-              endDecorator={<RouterLink to="/signup"  >Sign up</RouterLink>}
+              endDecorator={
+                <Link to="/signup">I do not remember my password</Link>
+              }
+              fontSize="sm"
+              sx={{ alignSelf: "center" }}
+              // onClick={handleSignup}
+            />
+            <Button sx={{ mt: 1 }}>Log in</Button>
+            <Typography
+              endDecorator={<Link to="/signup">Sign up</Link>}
               fontSize="sm"
               sx={{ alignSelf: "center" }}
               onClick={handleSignup}
