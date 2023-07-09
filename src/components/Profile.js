@@ -1,13 +1,16 @@
-
-
+import {AiOutlineMail} from 'react-icons/ai';
+import Button from '@mui/joy/Button/Button';
 
 
 export default function Profile() {
 
 
     return (
-<div style={{width: "100vw", height: "100vh"}}>
-    <h1>Profile</h1>
-</div>
+    <div>
+<Button variant="contained">Contained</Button>
+<AiOutlineMail/>
+    </div>
+    
     )
-}
+    }
+    
