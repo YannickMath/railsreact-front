@@ -51,18 +51,27 @@ body {
 }
 
 
-/********************Profile Page********************/
+/********************Main Profile Page********************/
 
 .mainProfile {
   width: 100vw;
   height: 100vh;
 
 }
+/********************Photo Profile Page********************/
+.photoProfileContainer {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 .profilePic {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
 }
+
+/********************Description Profile Page********************/
 
