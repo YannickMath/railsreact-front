@@ -23,11 +23,11 @@ body {
   /* display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
-  grid-template-areas: "leftContainer rightContainer"; */
+  grid-template-areas: leftContainer rightContainer; */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../public/twitter.webp");
+  background-image: url(../public/twitter.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -50,20 +50,24 @@ body {
   align-items: center;
 }
 
-
 /********************Main Profile Page********************/
 
 .mainProfile {
   width: 100vw;
   height: 100vh;
-
 }
 /********************Photo Profile Page********************/
 .photoProfileContainer {
   width: 100vw;
+  height: 20vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-around;
+  padding: 10px;
+  background-image: url(../public/tweeter.png);
+  box-shadow: 2px 2px 2px 2px rgba(195, 187, 187, 0.75);
+
+  box-sizing: border-box;
 }
 
 .profilePic {
@@ -73,5 +77,38 @@ body {
   object-fit: cover;
 }
 
-/********************Description Profile Page********************/
+.leftbox {
+  /* width: 100vw; */
+  /* height: 30vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
 
+.rightbox {
+  /* width: 100vw; */
+  /* height: 30vh; */
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mailButton {
+ border:  1px white;
+  color:white;
+  background-color:black;
+  border-radius: 50px;
+  padding: 10px;
+   cursor:pointer
+}
+
+.mailButton:hover {
+  background-color: rgb(40, 46, 154);
+  ;
+  border: 1px black;
+}
+/********************Description Profile Page********************/
