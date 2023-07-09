@@ -6,7 +6,9 @@ import FormControl from "@mui/joy/FormControl";
 import FormLabel from "@mui/joy/FormLabel";
 import Input from "@mui/joy/Input";
 import Button from "@mui/joy/Button";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Link from "@mui/joy/Link/Link";
+import "../App.css";
 
 export default function Welcome() {
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ export default function Welcome() {
     password: "",
   });
 
-  const handleLogin = async () => {
+  const handleSubmitLogin = async () => {
     // Validation des entrées
     if (!state.email || !state.password) {
       alert("Veuillez remplir tous les champs.");
@@ -60,72 +62,83 @@ export default function Welcome() {
     }));
   };
 
+  function handleSignup() {
+    navigate("/signup");
+  }
+
   return (
     <div className="main">
-      <div className="leftContainer"></div>
+      {/* <div className="leftContainer"></div> */}
 
-      <div className="rightContainer">
-        <CssVarsProvider>
-          <Sheet
-            sx={{
-              width: 500,
-              height: 500,
-              mx: "auto",
-              my: 4,
-              py: 3,
-              px: 2,
-              display: "flex",
-              flexDirection: "column",
-              gap: 4,
-              borderRadius: "sm",
-              boxShadow: "md",
-            }}
-            variant="outlined"
-          >
-            <div>
-              <Typography level="h4" component="h1">
-                <b>Welcome!</b>
-              </Typography>
-              <Typography level="body2">Sign in to continue.</Typography>
-            </div>
-            <FormControl>
-              <FormLabel>Email</FormLabel>
-              <Input
-                onChange={handleOnChange}
-                value={state.email}
-                name="email"
-                type="email"
-                placeholder="johndoe@email.com"
-              />
-            </FormControl>
-            <FormControl>
-              <FormLabel>Password</FormLabel>
-              <Input
-                onChange={handleOnChange}
-                value={state.password}
-                name="password"
-                type="password"
-                placeholder="password"
-              />
-            </FormControl>
-            <Typography
-              endDecorator={
-                <Link to="/forgot-password">I do not remember my password</Link>
-              }
-              fontSize="sm"
-              sx={{ alignSelf: "center" }}
-            />
-            <Button sx={{ mt: 1 }} onClick={handleLogin}>Log in</Button>
-            <Typography
-              endDecorator={<Link to="/signup">Sign up</Link>}
-              fontSize="sm"
-              sx={{ alignSelf: "center" }}
-            >
-              Don't have an account?
+      {/* <div className="rightContainer"> */}
+      <CssVarsProvider>
+        <Sheet
+          sx={{
+            width: 800,
+            height: 800,
+            mx: "auto",
+            my: 4,
+            py: 3,
+            px: 2,
+            display: "flex",
+            flexDirection: "column",
+            gap: 10,
+            borderRadius: "sm",
+            boxShadow: "md",
+          }}
+          variant="outlined"
+        >
+          <div>
+            <Typography level="h1" component="h1">
+              <b>Welcome!</b>
             </Typography>
-          </Sheet>
-        </CssVarsProvider>
-      </div>
+            <Typography sx={{ fontSize: "xl" }}>
+              Sign in to continue.
+            </Typography>
+          </div>
+          <FormControl>
+            <FormLabel sx={{ fontSize: "xl" }}>Email</FormLabel>
+            <Input
+              onChange={handleOnChange}
+              value={state.email}
+              name="email"
+              type="email"
+              placeholder="johndoe@email.com"
+              sx={{ fontSize: "xl" }}
+            />
+          </FormControl>
+          <FormControl>
+            <FormLabel sx={{ fontSize: "xl" }}>Password</FormLabel>
+            <Input
+              onChange={handleOnChange}
+              value={state.password}
+              name="password"
+              type="password"
+              placeholder="password"
+              sx={{ fontSize: "xl" }}
+            />
+          </FormControl>
+          <Typography
+            endDecorator={
+              <Link to="/forgot-password">I forgot my password</Link>
+            }
+            fontSize="xl"
+            sx={{ alignSelf: "center" }}
+          />
+          <Button sx={{ mt: 1, fontSize: "xl3" }} onClick={handleSubmitLogin}>
+            Log in
+          </Button>
+          <Typography
+            endDecorator={<Link to="/signup">Sign up</Link>}
+            fontSize="xl"
+            sx={{ alignSelf: "center" }}
+            onClick={handleSignup}
+          >
+            Don't have an account?
+          </Typography>
+        </Sheet>
+      </CssVarsProvider>
     </div>
+    // </div>
   );
 }
