@@ -1,15 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  /* font-family: sans-serif; */
-  /* display: flex; */
 }
 
-/* div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+/********************Welcome Page********************/
+
+
 .layout {
   display: flex;
   justify-content: center;
@@ -20,10 +16,7 @@ body {
 .main {
   width: 100vw;
   height: 100vh;
-  /* display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 100%;
-  grid-template-areas: leftContainer rightContainer; */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +28,6 @@ body {
 
 .leftContainer {
   width: 50w;
-  height: 100vh;
   grid-area: leftContainer;
   display: flex;
   justify-content: center;
@@ -44,7 +36,6 @@ body {
 
 .rightContainer {
   grid-area: rightContainer;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,19 +46,23 @@ body {
 .mainProfile {
   width: 100vw;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "ProfilePhoto"
+    "ProfileNavigation"
+    "ProfileSearchBar"
+    "ProfileDescription";
 }
 /********************Photo Profile Page********************/
 .photoProfileContainer {
-  width: 100vw;
-  height: 20vh;
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  padding: 10px;
   background-image: url(../public/tweeter.png);
-  box-shadow: 2px 2px 2px 2px rgba(195, 187, 187, 0.75);
-
-  box-sizing: border-box;
 }
 
 .profilePic {
@@ -97,18 +92,39 @@ body {
   gap: 10px;
 }
 
-.mailButton {
- border:  1px white;
-  color:white;
-  background-color:black;
+.mailButton,
+.logoutButton {
+  border: 1px white;
+  color: white;
+  background-color: black;
   border-radius: 50px;
   padding: 10px;
-   cursor:pointer
+  cursor: pointer;
 }
 
-.mailButton:hover {
+.mailButton:hover,
+.logoutButton:hover {
   background-color: rgb(40, 46, 154);
-  ;
   border: 1px black;
 }
 /********************Description Profile Page********************/
+
+.mainContainerDescription {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+
+/********************ProfileNavigation Page********************/
+.mainContainerNavigation {
+  background-color: pink;
+  height: 100%;
+  width: 100%;
+}
+
+/********************ProfileSearchBar Page********************/
+.mainContainerSearchBar {
+  background-color: gray;
+  height: 100%;
+  width: 100%;
+}

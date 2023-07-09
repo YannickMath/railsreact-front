@@ -1,6 +1,6 @@
 import React from 'react';
 import "../App.css";
-import { AiOutlineMail, AiFillCamera } from "react-icons/ai";
+import { AiOutlineMail, AiFillCamera, AiOutlineLogout } from "react-icons/ai";
 // import {GrMail} from "react-icons/gr";  
 import Button from "@mui/joy/Button/Button";
 
@@ -22,6 +22,7 @@ const ProfilePhoto = ({ src }) => {
      
       // onClick={openMedia}
       >Follow</Button>
+      <AiOutlineLogout size={30}  className="logoutButton"  />
 
       </div>
     </div>
