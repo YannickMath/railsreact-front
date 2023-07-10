@@ -10,7 +10,7 @@ const ProfilePhoto = ({ src }) => {
       
       <div className='leftbox'>
 
-<AiFillCamera size={30}  style={{border: "solid 1px black", borderRadius: "50px", padding: "10px", margin: "0 5px 0 5px", cursor:"pointer"}} />
+<AiFillCamera size={30}  style={{border: "solid 1px black", borderRadius: "50px",  cursor:"pointer"}} />
       <img src={src} alt="profilImage" className="profilePic"/>
 
       </div>

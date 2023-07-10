@@ -81,9 +81,9 @@ export default function Signup() {
 
   return (
     <div className="main">
-      <div className="leftContainer"></div>
+      {/* <div className="leftContainer"></div> */}
 
-      <div className="rightContainer">
+      {/* <div className="rightContainer"> */}
         <CssVarsProvider>
           <Sheet
             sx={{
@@ -164,6 +164,6 @@ export default function Signup() {
           </Sheet>
         </CssVarsProvider>
       </div>
-    </div>
+    // </div>
   );
 }

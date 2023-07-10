@@ -54,6 +54,7 @@ body {
     "ProfileNavigation"
     "ProfileSearchBar"
     "ProfileDescription";
+    box-sizing: border-box;
 }
 /********************Photo Profile Page********************/
 .photoProfileContainer {
@@ -62,7 +63,13 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  background-image: url(../public/tweeter.png);
+  /* background-image: url(../public/tweeter.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+  background-color: rgb(216, 210, 210);
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .profilePic {
@@ -90,6 +97,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+
 }
 
 .mailButton,
@@ -107,12 +115,20 @@ body {
   background-color: rgb(40, 46, 154);
   border: 1px black;
 }
-/********************Description Profile Page********************/
+/********************ProfileDescription Page********************/
 
 .mainContainerDescription {
-  background-color: black;
+  /* background-color: black; */
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+p {
+  width: 100%;
+  flex-wrap: wrap;
+  line-height: 2rem;
 }
 
 /********************ProfileNavigation Page********************/
@@ -128,3 +144,4 @@ body {
   height: 100%;
   width: 100%;
 }
+
