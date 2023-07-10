@@ -1,8 +1,8 @@
 import React from 'react';
 import "../App.css";
 import { AiOutlineMail, AiFillCamera, AiOutlineLogout } from "react-icons/ai";
-// import {GrMail} from "react-icons/gr";  
 import Button from "@mui/joy/Button/Button";
+import Divider from "@mui/material/Divider/Divider";
 
 const ProfilePhoto = ({ src }) => {
   return (
@@ -25,6 +25,7 @@ const ProfilePhoto = ({ src }) => {
       <AiOutlineLogout size={30}  className="logoutButton"  />
 
       </div>
+      <Divider/>
     </div>
   );
 }

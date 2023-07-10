@@ -49,7 +49,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 0.2fr 1fr;
   grid-template-areas:
     "ProfilePhoto"
     "ProfileNavigation"
@@ -62,14 +62,13 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-evenly;
   /* background-image: url(../public/tweeter.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; */
   background-color: rgb(216, 210, 210);
-  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -86,13 +85,15 @@ body {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+  width: 100%;
 }
 
 .rightbox {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
+  width: 100%;
 }
 
 .mailButton,
@@ -115,11 +116,11 @@ body {
 
 .mainContainerDescription {
   height: 100%;
-  width: 70%;
+  width: 60%;
   box-sizing: border-box;
   padding: 10px;
   border: 1px solid black;
-  margin-left: 15%;
+  margin-left: 20%;
 }
 
 p {
@@ -128,20 +129,13 @@ p {
   line-height: 2rem;
 }
 
-/********************ProfileNavigation Page********************/
-.mainContainerNavigation {
-  background-color: pink;
-  height: 100%;
-  width: 100%;
-}
-
 /********************ProfileSearchBar Page********************/
 .mainContainerSearchBar {
   height: 100%;
-  width: 70%;
+  width: 30%;
   border: 1px solid black;
   display: flex;
-  margin-left: 15%;
+  margin-left: 35%;
   align-items: center;
   justify-content: space-around;
 }
@@ -151,6 +145,15 @@ p {
 }
 
 .searchBarButton:hover {
- scale: 1.4;
- transition: 1s;
+  scale: 1.4;
+  transition: 1s;
+}
+
+/********************ProfileNavigation Page********************/
+.mainContainerNavigation {
+  background-color: pink;
+  height: 100%;
+  width: 60%;
+  margin-left: 20%;
+  border: 1px solid black;
 }
