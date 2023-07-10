@@ -1,10 +1,11 @@
+/********************Root App.js********************/
+
 body {
   margin: 0;
   padding: 0;
 }
 
 /********************Welcome Page********************/
-
 
 .layout {
   display: flex;
@@ -54,7 +55,7 @@ body {
     "ProfileNavigation"
     "ProfileSearchBar"
     "ProfileDescription";
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 /********************Photo Profile Page********************/
 .photoProfileContainer {
@@ -80,8 +81,6 @@ body {
 }
 
 .leftbox {
-  /* width: 100vw; */
-  /* height: 30vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,14 +89,10 @@ body {
 }
 
 .rightbox {
-  /* width: 100vw; */
-  /* height: 30vh; */
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   gap: 10px;
-
 }
 
 .mailButton,
@@ -115,14 +110,16 @@ body {
   background-color: rgb(40, 46, 154);
   border: 1px black;
 }
+
 /********************ProfileDescription Page********************/
 
 .mainContainerDescription {
-  /* background-color: black; */
   height: 100%;
-  width: 100%;
+  width: 70%;
   box-sizing: border-box;
   padding: 10px;
+  border: 1px solid black;
+  margin-left: 15%;
 }
 
 p {
@@ -140,8 +137,20 @@ p {
 
 /********************ProfileSearchBar Page********************/
 .mainContainerSearchBar {
-  background-color: gray;
   height: 100%;
-  width: 100%;
+  width: 70%;
+  border: 1px solid black;
+  display: flex;
+  margin-left: 15%;
+  align-items: center;
+  justify-content: space-around;
 }
 
+.searchBarButton {
+  cursor: pointer;
+}
+
+.searchBarButton:hover {
+ scale: 1.4;
+ transition: 1s;
+}
