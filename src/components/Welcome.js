@@ -66,6 +66,25 @@ export default function Welcome() {
     navigate("/signup");
   }
 
+  const handleForgotPassword = () => {
+    try {
+      const response = fetch("http://localhost:3000/users/password/new", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // body: JSON.stringify({ user: state }),
+      });
+
+      if (!response.ok) {
+        console.log("error");
+      }
+    } catch (error) {
+      console.error("Error during sign up: ", error);
+      alert(`Error signing up: ${error.message}`);
+    }
+  };
+
   return (
     <div className="main">
       {/* <div className="leftContainer"></div> */}
@@ -124,6 +143,7 @@ export default function Welcome() {
             }
             fontSize="xl"
             sx={{ alignSelf: "center" }}
+            onClick={handleForgotPassword}
           />
           <Button sx={{ mt: 1, fontSize: "xl3" }} onClick={handleSubmitLogin}>
             Log in

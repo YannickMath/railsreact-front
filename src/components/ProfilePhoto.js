@@ -4,7 +4,11 @@ import { AiOutlineMail, AiFillCamera, AiOutlineLogout } from "react-icons/ai";
 import Button from "@mui/joy/Button/Button";
 import Divider from "@mui/material/Divider/Divider";
 
-const ProfilePhoto = ({ src }) => {
+const ProfilePhoto = ({ src, handleLogout }) => {
+
+  // const {handleLogout} = props
+
+  
   return (
     <div className="photoProfileContainer">
       
@@ -22,7 +26,7 @@ const ProfilePhoto = ({ src }) => {
      
       // onClick={openMedia}
       >Follow</Button>
-      <AiOutlineLogout size={30}  className="logoutButton"  />
+      <AiOutlineLogout size={30}  className="logoutButton" onClick={handleLogout} />
 
       </div>
       <Divider/>
